@@ -432,7 +432,7 @@ Action Command_SwapTo(int client, int args)
 	GetCmdArg(args, teamStr, sizeof(teamStr));
 	int team = StringToInt(teamStr);
 
-	if(!team)
+	if(team < 1 || team > 3)
 	{
 		ReplyToCommand(client, "[SM] Invalid team %s specified, needs to be 1, 2, or 3", teamStr);
 		return Plugin_Handled;
